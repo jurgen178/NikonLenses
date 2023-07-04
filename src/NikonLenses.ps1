@@ -38,7 +38,7 @@ $heavyLenses = $allLensData.Where({ [int](($_.Weight -replace '^(\d+).*$', '$1')
 $aperture_2_8 = $allLensData.Where({ $_.Lens -match "/2.8(\s|$)" })
 
 
-# Print all lens data by the groups.
+# Print all lens data by group.
 foreach ($lensGroup in $lenses.PsObject.Properties) {
     "$($lensGroup.Name) ($($lensGroup.Value.count))"
 
