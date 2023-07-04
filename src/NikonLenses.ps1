@@ -34,6 +34,16 @@ $lightLenses = $allLensData.Where({ $_.Weight.Length -gt 0 -and [int](($_.Weight
 # Get all heavy lenses >2000g.
 $heavyLenses = $allLensData.Where({ [int](($_.Weight -replace '^(\d+).*$', '$1')) -gt 2000 })
 
+$first5heavyLenses = $heavyLenses.GetEnumerator() | Sort-Object { [int](($_.Weight -replace '^(\d+).*$', '$1')) } | Select-Object -Last 5
+# 2000/11 Reflex A,C (7500g)
+# 360-1200/11 ED Ai-S (8250g)
+# 50cm/5 T·C S, M39 (8500g)
+# 1000/6.3 Reflex F (9900g)
+# 1200-1700/5.6-8 IF-ED Ai-P (16000g)
+foreach ($lens in $first5heavyLenses) {
+    "$($lens.Lens) $($lens.Type) ($($lens.Weight)g)"
+}
+
 # Get all constant f/2.8 aperture lenses.
 $aperture_2_8 = $allLensData.Where({ $_.Lens -match "/2.8(\s|$)" })
 
