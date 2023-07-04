@@ -29,12 +29,12 @@ $AF16mmFisheye = $16mmFisheye.Where({ $_.Type -match "AF" })
 $24_85 = $allLensData.Where({ $_.Lens.StartsWith("24-85/") })
 
 # Get all light lenses <200g.
-$lightLenses = $allLensData.Where({ $_.Weight.Length -gt 0 -and [int](($_.Weight -replace '^(\d+).*$', '$1')) -lt 200 })
+$lightLenses = $allLensData.Where({ $_.Weight.Length -gt 0 -and [int]($_.Weight) -lt 200 })
 
 # Get all heavy lenses >2000g.
-$heavyLenses = $allLensData.Where({ [int](($_.Weight -replace '^(\d+).*$', '$1')) -gt 2000 })
+$heavyLenses = $allLensData.Where({ [int]($_.Weight) -gt 2000 })
 
-$first5heavyLenses = $heavyLenses.GetEnumerator() | Sort-Object { [int](($_.Weight -replace '^(\d+).*$', '$1')) } | Select-Object -Last 5
+$first5heavyLenses = $heavyLenses.GetEnumerator() | Sort-Object { [int]($_.Weight) } | Select-Object -Last 5
 # 2000/11 Reflex A,C (7500g)
 # 360-1200/11 ED Ai-S (8250g)
 # 50cm/5 T·C S, M39 (8500g)
