@@ -13,11 +13,13 @@ foreach ($lens in $16mmFisheye) {
 }
 ```
 
-> 16/3.5 F
-> 16/3.5 K
-> 16/3.5 Ai
-> 16/2.8 Ai
-> 16/2.8 Ai-S
-> 16/2.8 D AF
+```
+16/3.5 F
+16/3.5 K
+16/3.5 Ai
+16/2.8 Ai
+16/2.8 Ai-S
+16/2.8 D AF
+```
 
 Use [NikonLensesToJson.ps1](https://github.com/jurgen178/NikonLenses/blob/main/src/NikonLensesToJson.ps1) to create the lenses.json file, and [NikonLenses.ps1](https://github.com/jurgen178/NikonLenses/blob/main/src/NikonLenses.ps1) for example queries.
