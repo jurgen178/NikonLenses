@@ -46,7 +46,7 @@ foreach ($matchGroup in ([regex]$groupRegex).Matches($htmlContent)) {
             'Filter'     = $matchTable.Groups["Filter"].Value
             'Diam'       = $matchTable.Groups["Diam"].Value
             'Length'     = $matchTable.Groups["Length"].Value
-            'Weight'     = $matchTable.Groups["Weight"].Value -replace "\?", ""
+            'Weight'     = $matchTable.Groups["Weight"].Value  -replace '^(\d+).*$', '$1' -replace "\?", ""
             'Hood'       = $matchTable.Groups["Hood"].Value
         }
     }
