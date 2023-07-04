@@ -9,3 +9,5 @@ For example:
 # Get all 16mm Fisheye lenses.
 $16mmFisheye = $allLensData.Where({ $_.Group -eq "Fisheye" -and $_.Lens.StartsWith("16/") })
 ```
+
+Use NikonLensesToJson.ps1 to create the lenses.json file, and NikonLenses.ps1 for example queries.
