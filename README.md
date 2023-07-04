@@ -1,7 +1,7 @@
 # NikonLenses
-Convert the Nikon Lens web page to a json to query lens data.
+Convert the Nikon Lens http://www.photosynthesis.co.nz/nikon/lenses.html web page to a json to query lens data.
 
-http://www.photosynthesis.co.nz/nikon/lenses.html is an extensive lists of all Nikon Lenses.  
+The web page is an extensive lists of all Nikon Lenses.  
 A PowerShell script downloads and converts the html page to a JSON file, which can be used to query the lens data.
 
 For example:
