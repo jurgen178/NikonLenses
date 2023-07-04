@@ -37,6 +37,12 @@ $heavyLenses = $allLensData.Where({ [int](($_.Weight -replace '^(\d+).*$', '$1')
 # Get all constant f/2.8 aperture lenses.
 $aperture_2_8 = $allLensData.Where({ $_.Lens -match "/2.8(\s|$)" })
 
+# Get all Z mount VR lenses.
+$vr = $allLensData.Where({ $_.Type.Contains("Z") -and $_.Lens.Contains("VR") })
+
+# Get all DX lenses out of the Z mount VR lenses.
+$vrdx = $vr.Where({ $_.Type -eq "Z DX" })
+
 
 # Print all lens data by group.
 foreach ($lensGroup in $lenses.PsObject.Properties) {
