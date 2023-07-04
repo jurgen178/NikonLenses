@@ -27,7 +27,7 @@ foreach ($lens in $16mmFisheye) {
 $heavyLenses = $allLensData.Where({ [int]($_.Weight) -gt 2000 })
 
 # Get the first 5 heaviest lenses.
-$first5heavyLenses = $heavyLenses.GetEnumerator() | Sort-Object { [int]($_.Weight) } | Select-Object -Last 5
+$first5heavyLenses = $heavyLenses.GetEnumerator() | Sort-Object { [int]($_.Weight) } -Descending | Select-Object -First 5
 
 foreach ($lens in $first5heavyLenses) {
     "$($lens.Lens) $($lens.Type) ($($lens.Weight)g)"
@@ -35,11 +35,11 @@ foreach ($lens in $first5heavyLenses) {
 ```
 
 ```
-2000/11 Reflex A,C (7500g)
-360-1200/11 ED Ai-S (8250g)
-50cm/5 T·C S, M39 (8500g)
-1000/6.3 Reflex F (9900g)
 1200-1700/5.6-8 IF-ED Ai-P (16000g)
+1000/6.3 Reflex F (9900g)
+50cm/5 T·C S, M39 (8500g)
+360-1200/11 ED Ai-S (8250g)
+2000/11 Reflex A,C (7500g)
 ```
 
 Use [NikonLensesToJson.ps1](https://github.com/jurgen178/NikonLenses/blob/main/src/NikonLensesToJson.ps1) to create the lenses.json file, and [NikonLenses.ps1](https://github.com/jurgen178/NikonLenses/blob/main/src/NikonLenses.ps1) for example queries.
