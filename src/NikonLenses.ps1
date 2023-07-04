@@ -43,6 +43,15 @@ $vr = $allLensData.Where({ $_.Type.Contains("Z") -and $_.Lens.Contains("VR") })
 # Get all DX lenses out of the Z mount VR lenses.
 $vrdx = $vr.Where({ $_.Type -eq "Z DX" })
 
+# Print result.
+# 12-28/3.5-5.6 PZ VR Z DX
+# 16-50/3.5-6.3 VR Z DX
+# 18-140/3.5-6.3 VR Z DX
+# 50-250/4.5-6.3 VR Z DX
+foreach ($lens in $vrdx) {
+    "$($lens.Lens) $($lens.Type)"
+}
+
 
 # Print all lens data by group.
 foreach ($lensGroup in $lenses.PsObject.Properties) {
