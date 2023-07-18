@@ -34,8 +34,8 @@ foreach ($matchGroup in ([regex]$groupRegex).Matches($htmlContent)) {
             'Group'      = $group
             'Type'       = $matchTable.Groups["Type"].Value
             'Lens'       = $matchTable.Groups["Lens"].Value -replace "<a href="".*?"">", "" -replace "</a>", ""
-            'SerialNo'   = $matchTable.Groups["SerialNo"].Value -replace "<br>", " " -replace ">", " "
-            'Date'       = $matchTable.Groups["Date"].Value -replace "<br>", " " -replace ">", " "
+            'SerialNo'   = $matchTable.Groups["SerialNo"].Value -replace "<br>", " "
+            'Date'       = $matchTable.Groups["Date"].Value -replace "<br>", " "
             'Notes'      = $matchTable.Groups["Notes"].Value -replace "<br>", " "
             'Optic'      = $matchTable.Groups["Optic"].Value
             'Angle'      = $matchTable.Groups["Angle"].Value
