@@ -22,6 +22,11 @@ $ais = $allLensData.Where({ $_.Type -eq "Ai-S" -and $_.Lens -eq "6/2.8" })
 # Get all 16mm Fisheye lenses.
 $16mmFisheye = $allLensData.Where({ $_.Group -eq "Fisheye" -and $_.Lens.StartsWith("16/") })
 
+foreach ($lens in $16mmFisheye) {
+    "$($lens.Lens) $($lens.Type)"
+}
+
+
 # Get all AF lenses out of the 16mm Fisheye lenses.
 $AF16mmFisheye = $16mmFisheye.Where({ $_.Type -match "AF" })
 
@@ -33,7 +38,12 @@ $lightLenses = $allLensData.Where({ $_.Weight.Length -gt 0 -and [int]($_.Weight)
 
 # Get all heavy lenses >2000g.
 $heavyLenses = $allLensData.Where({ [int]($_.Weight) -gt 2000 })
+# $test = $heavyLenses.GetEnumerator() | Sort-Object -Property @{
+#     expression = 'Weight'
+#     descending = $true
+# } #| Select-Object -First 5
 
+# Get the first 5 heaviest lenses.
 $first5heavyLenses = $heavyLenses.GetEnumerator() | Sort-Object { [int]($_.Weight) } -Descending | Select-Object -First 5
 # 1200-1700/5.6-8 IF-ED Ai-P (16000g)
 # 1000/6.3 Reflex F (9900g)
@@ -62,7 +72,6 @@ foreach ($lens in $vrdx) {
     "$($lens.Lens) $($lens.Type)"
 }
 
-
 # Print all lens data by group.
 foreach ($lensGroup in $lenses.PsObject.Properties) {
     "$($lensGroup.Name) ($($lensGroup.Value.count))"
@@ -73,4 +82,3 @@ foreach ($lensGroup in $lenses.PsObject.Properties) {
         #"$($lens.Lens)"
     }
 }
-
