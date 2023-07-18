@@ -3,6 +3,8 @@ This project convert the Nikon Lens http://www.photosynthesis.co.nz/nikon/lenses
 
 The web page is an extensive list of all Nikon Lenses, but as a simple web page also limited to data queries. A PowerShell script is used to download and convert the html page to a JSON file to allow lens data queries.
 
+(Permission granted from photosynthesis.co.nz)
+
 For example:
 ```
 # Get all 16mm Fisheye lenses.
