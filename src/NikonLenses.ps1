@@ -3,7 +3,7 @@
 #>
 
 # Load the json data file.
-[string]$jsonFile = "$PSScriptRoot\lenses.json"
+[string]$jsonFile = "$PSScriptRoot\allData.json"
 $lenses = (Get-Content $jsonFile -Raw) | ConvertFrom-Json
 
 # Get the lens data.
