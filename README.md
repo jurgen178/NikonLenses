@@ -44,4 +44,4 @@ foreach ($lens in $first5heavyLenses) {
 2000/11 Reflex A,C (7500g)
 ```
 
-Use [NikonLensesToJson.ps1](https://github.com/jurgen178/NikonLenses/blob/main/src/NikonLensesToJson.ps1) to create the lenses.json file, and [NikonLenses.ps1](https://github.com/jurgen178/NikonLenses/blob/main/src/NikonLenses.ps1) for example queries.
+Use [NikonHtmlToJson.ps1](https://github.com/jurgen178/NikonLenses/blob/main/src/NikonHtmlToJson.ps1) to download and create the .json files, [CombineToAllJson.ps1](https://github.com/jurgen178/NikonLenses/blob/main/src/CombineToAllJson.ps1) to create the combined .json file and [NikonLenses.ps1](https://github.com/jurgen178/NikonLenses/blob/main/src/NikonLenses.ps1) for example queries using the combined .json file.
